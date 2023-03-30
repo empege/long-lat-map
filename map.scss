@@ -1,4 +1,8 @@
 // delete this as you won't have it in your code!
+body {
+  background-color: antiquewhite;
+}
+
 .column {
   max-width: 1200px;
   margin: 0 auto;
@@ -7,4 +11,6 @@
 
 #map {
   width: 100%;
+  // Delete
+  background-color: aqua !important;
 }

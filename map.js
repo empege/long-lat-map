@@ -29,15 +29,11 @@ var map = new jsVectorMap({
   zoomOnScroll : false,
   markersSelectable: false,
 
-  onMarkerSelected(index, isSelected, selectedMarkers) {
-    console.log(index, isSelected, selectedMarkers);
-  },
   onRegionTooltipShow(event, tooltip, code) {
     // Hide for all
     event.preventDefault()
   },
 
-  // -------- Labels --------
   labels: {
     markers: {
       render: function(marker) {
@@ -47,10 +43,12 @@ var map = new jsVectorMap({
   },
 
   regionStyle: {
+    initial: {
+      fill: 'green'
+    },
     hover: {
       fillOpacity: 1
-    },
-    selectedHover: { fill: 'purple' }
+    }
   },
 
   markers: markers,

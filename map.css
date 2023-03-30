@@ -1,3 +1,7 @@
+body {
+  background-color: antiquewhite;
+}
+
 .column {
   max-width: 1200px;
   margin: 0 auto;
@@ -5,4 +9,5 @@
 
 #map {
   width: 100%;
+  background-color: aqua !important;
 }
