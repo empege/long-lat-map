@@ -6,18 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jsvectormap (Markers)</title>
     
+    <!-- ----------------- Needed imports for map --------------------------- -->
     <link rel="stylesheet" href="map.css"/>
     <link rel="stylesheet" href="dist/jsvectormap.min.css"/>
     <script src="dist/jsvectormap.min.js"></script>
     <script src="dist/world.js"></script>
+    <!-- Google fonts - check if globaly set already - both 500 and 600 font-weight -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+    <!-- ------------------------------------------------------------------ -->
 </head>
 <body>
   <section class="column">
     <h1>Map title</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum numquam magnam illo molestiae cumque, provident, mollitia atque facilis incidunt saepe dignissimos vero? Officiis deserunt commodi, tempora illo fugit soluta minus.</p>
 
-    <!-- Just take this div where you want you map to be -->
-    <div id="map"></div>
+    <!-- --------------- Copy me where you want the map to be ----------------------- -->
+    <div class="map">
+      <h3 class="map__subtitle">LOCATIONS</h3>
+      <h2 class="map__title">We cover <span>the whole</span> world</h2>
+      <div class="map__root"></div>
+      <!-- Uncomment and enhance when logos part is accepted -->
+      <!-- <div class="map__separator"></div> -->
+    </div>
+    <!-- -------------------------------------------------------------------------- -->
+
     
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum numquam magnam illo molestiae cumque, provident, mollitia atque facilis incidunt saepe dignissimos vero? Officiis deserunt commodi, tempora illo fugit soluta minus.</p>
   </section>
