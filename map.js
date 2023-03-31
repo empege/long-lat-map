@@ -17,7 +17,7 @@ const cities = [
 ];
 
 var map = new jsVectorMap({
-  map: 'world',
+  map: 'worldmerc',
   selector: '.map__root',
   zoomButtons : false,
   zoomOnScroll : false,
