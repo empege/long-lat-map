@@ -1,4 +1,10 @@
 // delete this as you won't have it in your code!
+
+// mixins
+@mixin tablet {
+  @media (min-width: 768px) { @content; }
+}
+
 body {
   background-color: antiquewhite;
   padding: 0;
@@ -6,10 +12,13 @@ body {
 }
 
 .column-for-map {
-  // max-width: 1200px;
   margin: 0 auto;
-  padding: 0 100px;
+  padding: 0 20px;
   background-color: #072229;
+
+  @include tablet {
+    padding: 0 100px;
+  }
 }
 
 .column-100 {
@@ -17,12 +26,6 @@ body {
   padding: 0px;
   background-color: #072229;
 }
-
-// mixins
-@mixin tablet {
-  @media (min-width: 768px) { @content; }
-}
-
 // end delete
 
 .map {
