@@ -4,8 +4,16 @@ body {
   margin: 0;
 }
 
-.column {
+.column-for-map {
   margin: 0 auto;
+  padding: 0 100px;
+  background-color: rgba(7, 34, 41, 0.8);
+}
+
+.column-100 {
+  margin: 0 auto;
+  padding: 0px;
+  background-color: rgba(7, 34, 41, 0.8);
 }
 
 .map {
@@ -78,21 +86,21 @@ body {
 
 .map__separator {
   margin: 0 auto 39px auto;
-  max-width: 1200px;
   height: 1px;
   background-color: #D9D9D9;
   opacity: 0.1;
   margin-bottom: 22px;
+  display: none;
 }
 
 @media (min-width: 768px) {
   .map__separator {
     margin-bottom: 39px;
+    display: block;
   }
 }
 
 .map__reviews-title {
-  max-width: 1200px;
   margin: 0px auto 36px auto;
   font-size: 19px;
   font-weight: 600;
@@ -109,8 +117,8 @@ body {
   }
 }
 
-.map__reviews {
-  margin-bottom: 46px;
+.reviews {
+  padding-bottom: 46px;
   width: 100%;
   height: 50px;
   overflow: hidden;
@@ -120,19 +128,23 @@ body {
 }
 
 @media (min-width: 768px) {
-  .map__reviews {
-    margin-bottom: 114px;
+  .reviews {
+    padding-bottom: 114px;
   }
 }
 
-.map__reviews::-webkit-scrollbar {
+.reviews::-webkit-scrollbar {
   display: none;
 }
 
-.map__reviews-icon {
+.reviews__icon {
   width: 200px;
   height: 100%;
   display: inline-block;
+}
+
+.reviews__icon:first-child {
+  margin-left: -55px;
 }
 
 .jvm-tooltip.active {

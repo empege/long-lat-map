@@ -5,9 +5,17 @@ body {
   margin: 0;
 }
 
-.column {
+.column-for-map {
   // max-width: 1200px;
   margin: 0 auto;
+  padding: 0 100px;
+  background-color: rgba(7, 34, 41, 0.8);
+}
+
+.column-100 {
+  margin: 0 auto;
+  padding: 0px;
+  background-color: rgba(7, 34, 41, 0.8);
 }
 
 // mixins
@@ -81,19 +89,19 @@ body {
 
   &__separator {
     margin: 0 auto 39px auto;
-    max-width: 1200px;
     height: 1px;
     background-color: #D9D9D9;
     opacity: 0.1;
     margin-bottom: 22px;
+    display: none;
     
     @include tablet {
       margin-bottom: 39px;
+      display: block;
     }
   }
 
   &__reviews-title {
-    max-width: 1200px;
     margin: 0px auto 36px auto;
     font-size: 19px;
     font-weight: 600;
@@ -107,30 +115,34 @@ body {
       font-weight: 600;
     }
   }
+}
 
-  &__reviews {
-    margin-bottom: 46px;
-    width: 100%;
-    height: 50px;
-    overflow: hidden;
-    overflow-x: scroll;
-    white-space: nowrap;
-    scrollbar-width: none;
-    // cursor: grab;
+.reviews {
+  padding-bottom: 46px;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-width: none;
+  // cursor: grab;
 
-    @include tablet {
-      margin-bottom: 114px;
-    }
-    
-    &::-webkit-scrollbar { 
-      display: none;
-    }
+  @include tablet {
+    padding-bottom: 114px;
+  }
+  
+  &::-webkit-scrollbar { 
+    display: none;
   }
 
-  &__reviews-icon {
+  &__icon {
     width: 200px;
     height: 100%;
     display: inline-block;
+  
+    &:first-child {
+      margin-left: -55px;
+    }
   }
 }
 
