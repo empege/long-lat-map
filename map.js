@@ -59,10 +59,10 @@ var map = new jsVectorMap({
   }
 })
 
-
 const mapEl = document.querySelector('.map')
 const mapRoot = document.querySelector('.map__root')
 const regions = document.querySelectorAll('.map__region')
+const reviews = document.querySelector('.map__reviews')
 
 regions.forEach(region => {
   const regionData = region.dataset.region
@@ -71,14 +71,32 @@ regions.forEach(region => {
   })
 })
 
+// Draggable reviews
+const handleReviewsMouseDown = (e) => {
+  pos = {
+    left: reviews.scrollLeft,
+    x: e.clientX
+  }
+
+  document.addEventListener('mousemove', handleReviewsMouseMove);
+  document.addEventListener('mouseup', handleReviewsMouseUp);
+}
+
+const handleReviewsMouseMove = (e) => {
+  const dx = e.clientX - pos.x;
+  reviews.scrollLeft = pos.left - dx;
+}
+
+const handleReviewsMouseUp = (e) => {
+  document.removeEventListener('mousemove', handleReviewsMouseMove);
+  document.removeEventListener('mouseup', handleReviewsMouseUp);
+}
+
 const updateMapContainerSize = () => {
-  // if (window.innerWidth > 768) {
     mapRoot.style.height = `${mapRoot.clientWidth / 2}px`
-  // } else {
-  //   mapRoot.style.height = `${mapRoot.clientWidth / 2}px`
-  // }
 }
 
 updateMapContainerSize()
 
+reviews.addEventListener('mousedown', handleReviewsMouseDown)
 window.addEventListener('resize', updateMapContainerSize)
