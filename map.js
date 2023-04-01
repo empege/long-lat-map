@@ -72,7 +72,11 @@ regions.forEach(region => {
 })
 
 const updateMapContainerSize = () => {
-  mapRoot.style.height = `${mapRoot.clientWidth / 2}px`
+  // if (window.innerWidth > 768) {
+    mapRoot.style.height = `${mapRoot.clientWidth / 2}px`
+  // } else {
+  //   mapRoot.style.height = `${mapRoot.clientWidth / 2}px`
+  // }
 }
 
 updateMapContainerSize()

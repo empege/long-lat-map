@@ -100,17 +100,20 @@ body {
 .map__root-wrapper {
   width: 100%;
   overflow: hidden;
+  padding-bottom: 40px;
 }
 
 @media (min-width: 768px) {
   .map__root-wrapper {
     overflow: visible;
+    padding-bottom: 0px;
   }
 }
 
 .map__root {
   width: 100%;
-  margin-bottom: 41px;
+  margin-bottom: 60px;
+  margin-top: 25px;
   min-width: 900px;
   -webkit-transition: margin 0.4s, -webkit-transform 0.4s;
   transition: margin 0.4s, -webkit-transform 0.4s;
@@ -121,6 +124,7 @@ body {
 @media (min-width: 768px) {
   .map__root {
     margin-bottom: 141px;
+    margin-top: 0px;
     min-width: auto;
   }
 }
@@ -184,7 +188,6 @@ body {
   opacity: 0.1;
   margin-bottom: 22px;
   display: none;
-  max-width: 1200px;
 }
 
 @media (min-width: 768px) {
@@ -202,7 +205,6 @@ body {
   line-height: 26px;
   letter-spacing: 0em;
   text-align: left;
-  max-width: 1200px;
 }
 
 @media (min-width: 768px) {
