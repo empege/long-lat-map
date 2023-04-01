@@ -6,7 +6,14 @@ body {
 
 .column-for-map {
   margin: 0 auto;
+  padding: 0 20px;
   background-color: #072229;
+}
+
+@media (min-width: 768px) {
+  .column-for-map {
+    padding: 0 100px;
+  }
 }
 
 .column-100 {
@@ -17,7 +24,7 @@ body {
 
 .map {
   width: 100%;
-  overflow: auto;
+  overflow: visible;
   color: #FFFFFF;
   font-family: 'Manrope', sans-serif;
 }
@@ -28,13 +35,14 @@ body {
   line-height: 19px;
   letter-spacing: 0em;
   text-align: center;
-  margin-top: 52px;
+  padding-top: 52px;
   margin-bottom: 10px;
+  margin-top: 0px;
 }
 
 @media (min-width: 768px) {
   .map__subtitle {
-    margin-top: 105px;
+    padding-top: 105px;
     margin-bottom: 19px;
   }
 }
@@ -45,6 +53,7 @@ body {
   font-weight: 500;
   letter-spacing: -0.02em;
   text-align: center;
+  margin-top: 0px;
   margin-bottom: 33px;
 }
 
@@ -95,7 +104,7 @@ body {
 
 @media (min-width: 768px) {
   .map__root-wrapper {
-    overflow: auto;
+    overflow: visible;
   }
 }
 
@@ -103,8 +112,10 @@ body {
   width: 100%;
   margin-bottom: 41px;
   min-width: 900px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: margin 0.4s, -webkit-transform 0.4s;
+  transition: margin 0.4s, -webkit-transform 0.4s;
+  transition: margin 0.4s, transform 0.4s;
+  transition: margin 0.4s, transform 0.4s, -webkit-transform 0.4s;
 }
 
 @media (min-width: 768px) {
@@ -184,7 +195,8 @@ body {
 }
 
 .map__reviews-title {
-  margin: 0px auto 36px auto;
+  margin: 0px auto;
+  padding-bottom: 36px;
   font-size: 19px;
   font-weight: 600;
   line-height: 26px;
@@ -195,9 +207,9 @@ body {
 
 @media (min-width: 768px) {
   .map__reviews-title {
-    margin: 0px auto 72px auto;
     font-size: 22px;
     font-weight: 600;
+    padding-bottom: 72px;
   }
 }
 

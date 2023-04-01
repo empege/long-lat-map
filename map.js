@@ -8,11 +8,11 @@ const cities = [
   },
   {
     name: 'Sydney',
-    coords: [-33.865143, 151.209900],
+    coords: [-33.865143, 151.209900]
   },
   {
     name: 'Rio',
-    coords: [-22.908333, -43.196388],
+    coords: [-22.908333, -43.196388]
   }
 ];
 
@@ -55,8 +55,8 @@ var map = new jsVectorMap({
   onLoaded(map) {
     window.addEventListener('resize', () => {
       map.updateSize()
-  })
-}
+    })
+  }
 })
 
 

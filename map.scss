@@ -1,4 +1,4 @@
-// delete this as you won't have it in your code!
+// Delete this as you won't have it in your code!
 
 // mixins
 @mixin tablet {
@@ -13,11 +13,11 @@ body {
 
 .column-for-map {
   margin: 0 auto;
-  // padding: 0 20px;
+  padding: 0 20px;
   background-color: #072229;
 
   @include tablet {
-    // padding: 0 100px;
+    padding: 0 100px;
   }
 }
 
@@ -26,11 +26,11 @@ body {
   padding: 0px;
   background-color: #072229;
 }
-// end delete
+// End delete
 
 .map {
   width: 100%;
-  overflow: auto;
+  overflow: visible;
   color: #FFFFFF;
   font-family: 'Manrope', sans-serif;
 
@@ -40,11 +40,12 @@ body {
     line-height: 19px;
     letter-spacing: 0em;
     text-align: center;
-    margin-top: 52px;
+    padding-top: 52px;
     margin-bottom: 10px;
+    margin-top: 0px;
     
     @include tablet {
-      margin-top: 105px;
+      padding-top: 105px;
       margin-bottom: 19px;
     }
 
@@ -56,6 +57,7 @@ body {
     font-weight: 500;
     letter-spacing: -0.02em;
     text-align: center;
+    margin-top: 0px;
     margin-bottom: 33px;
 
     @include tablet {
@@ -106,7 +108,7 @@ body {
     // }
 
     @include tablet {
-      overflow: auto;
+      overflow: visible;
     }
   }
 
@@ -115,7 +117,7 @@ body {
     // margin-bottom: 62px; Use this if you disable reviews and separator
     margin-bottom: 41px;
     min-width: 900px;
-    transition: 0.4s;
+    transition: margin 0.4s, transform 0.4s;
 
     @include tablet {
       margin-bottom: 141px;
@@ -185,7 +187,8 @@ body {
   }
 
   &__reviews-title {
-    margin: 0px auto 36px auto;
+    margin: 0px auto;
+    padding-bottom: 36px;
     font-size: 19px;
     font-weight: 600;
     line-height: 26px;
@@ -194,9 +197,9 @@ body {
     max-width: 1200px;
 
     @include tablet {
-      margin: 0px auto 72px auto;
       font-size: 22px;
       font-weight: 600;
+      padding-bottom: 72px;
     }
   }
 }
