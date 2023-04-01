@@ -25,10 +25,17 @@
 
   <section class="column-for-map">
     <!-- --------------- Copy me where you want the map to be ----------------------- -->
-    <div class="map">
+    <div class="map" data-active-region="america">
       <h3 class="map__subtitle">LOCATIONS</h3>
       <h2 class="map__title">We cover <span>the whole</span> world</h2>
-      <div class="map__root"></div>
+      <div class="map__regions">
+        <h5 class="map__region" data-region="america">America</h5>
+        <h5 class="map__region" data-region="europe">Europe</h5>
+        <h5 class="map__region" data-region="other">Other</h5>
+      </div>
+      <div class="map__root-wrapper">
+        <div class="map__root"></div>
+      </div>
       <!-- Delete until logos part is accepted -->
       <div class="map__separator"></div>
       <h4 class="map__reviews-title">Trusted by:</h4>
@@ -39,6 +46,7 @@
   </section>
   <section class="column-for-map column-100">
     
+    <!-- --------------- Copy me below the map in another container so I go 100% width ----------------------- -->
     <!-- Delete until logos part is accepted -->
     <div class="reviews">
       <div class="reviews__icon">
@@ -73,6 +81,7 @@
       </div>
     </div>
     <!-- Delete end -->
+    <!-- -------------------------------------------------------------------------- -->
   </section>
 
   <section class="column">

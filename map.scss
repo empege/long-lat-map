@@ -13,11 +13,11 @@ body {
 
 .column-for-map {
   margin: 0 auto;
-  padding: 0 20px;
+  // padding: 0 20px;
   background-color: #072229;
 
   @include tablet {
-    padding: 0 100px;
+    // padding: 0 100px;
   }
 }
 
@@ -56,26 +56,76 @@ body {
     font-weight: 500;
     letter-spacing: -0.02em;
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 33px;
 
     @include tablet {
       font-size: 40px;
       line-height: 54px;
+      margin-bottom: 64px;
     }
 
     span {
       color: #96D1FE;
     }
+  }
 
+  &__regions {
+    margin-bottom: 33px;
+    text-align: center;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__region {
+    margin: 0px 41px 0px 0px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 0em;
+    
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  &__root-wrapper {
+    width: 100%;
+    overflow: hidden;
+    // overflow-x: scroll;
+    // scrollbar-width: none;
+    // &::-webkit-scrollbar { 
+    //   display: none;
+    // }
+
+    @include tablet {
+      overflow: auto;
+    }
   }
 
   &__root {
     width: 100%;
     // margin-bottom: 62px; Use this if you disable reviews and separator
     margin-bottom: 41px;
+    min-width: 900px;
+    transition: 0.4s;
 
     @include tablet {
       margin-bottom: 141px;
+      min-width: auto;
+    }
+
+    &[data-region="c"] {
+      @include tablet {
+        margin-left: auto;
+      }
     }
 
     circle {
@@ -87,6 +137,36 @@ body {
         stroke-width: 8;
       }
     }
+  }
+
+  &[data-active-region="america"] &__root {
+    margin-left: calc(50% - 230px);
+    transform: scale(1.1);
+  }
+
+  &[data-active-region="europe"] &__root {
+    margin-left: calc(50% - 460px);
+    transform: scale(1.6);
+  }
+
+  &[data-active-region="other"] &__root {
+    margin-left: calc(50% - 580px);
+    transform: scale(0.9);
+  }
+
+  &[data-active-region="america"] &__root,
+  &[data-active-region="europe"] &__root,
+  &[data-active-region="other"] &__root {
+    @include tablet {
+      margin-left: auto;
+      transform: scale(1);
+    }
+  }
+  
+  &[data-active-region="america"] &__region[data-region="america"],
+  &[data-active-region="europe"] &__region[data-region="europe"],
+  &[data-active-region="other"] &__region[data-region="other"] {
+    color: #96D1FE
   }
 
   &__separator {
@@ -129,6 +209,7 @@ body {
   overflow-x: scroll;
   white-space: nowrap;
   scrollbar-width: none;
+  margin-top: -1px;
   // cursor: grab;
 
   @include tablet {

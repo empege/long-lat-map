@@ -59,10 +59,20 @@ var map = new jsVectorMap({
 }
 })
 
-const mapEl = document.querySelector('.map__root')
+
+const mapEl = document.querySelector('.map')
+const mapRoot = document.querySelector('.map__root')
+const regions = document.querySelectorAll('.map__region')
+
+regions.forEach(region => {
+  const regionData = region.dataset.region
+  region.addEventListener('click', () => {
+    mapEl.dataset.activeRegion = regionData
+  })
+})
 
 const updateMapContainerSize = () => {
-  mapEl.style.height = `${mapEl.clientWidth / 2}px`
+  mapRoot.style.height = `${mapRoot.clientWidth / 2}px`
 }
 
 updateMapContainerSize()
