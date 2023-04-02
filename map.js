@@ -1,21 +1,3 @@
-const cities = [
-  {
-    name: 'Belgrade',
-    coords: [44.787197, 20.457273],
-    // style: {
-    //   fill: '#5c5cff'
-    // }
-  },
-  {
-    name: 'Sydney',
-    coords: [-33.865143, 151.209900]
-  },
-  {
-    name: 'Rio',
-    coords: [-22.908333, -43.196388]
-  }
-];
-
 var map = new jsVectorMap({
   map: 'worldmerc',
   selector: '.map__root',

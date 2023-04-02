@@ -1,10 +1,9 @@
-// Delete this as you won't have it in your code!
-
 // mixins
 @mixin tablet {
   @media (min-width: 768px) { @content; }
 }
 
+// Delete this as you won't have it in your code!
 body {
   background-color: antiquewhite;
   padding: 0;
