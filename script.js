@@ -1,3 +1,31 @@
+// MODAL JS
+const modal = {
+  selectors: {
+    modal: 'modal',
+    openModalBtn: 'js-modal-open',
+    closeModalBtn: 'js-modal-close'
+  }
+}
+
+// Elements
+const modalEl = document.querySelector(`.${modal.selectors.modal}`)
+const openModalBtn = document.querySelector(`.${modal.selectors.openModalBtn}`)
+const closeModalBtn = document.querySelector(`.${modal.selectors.closeModalBtn}`)
+
+// Functions
+const openModal = () => {
+  modalEl.style.display = 'block'
+}
+
+const closeModal = () => {
+  modalEl.style.display = 'none'
+}
+
+//Event listeners
+openModalBtn.addEventListener('click', openModal)
+closeModalBtn.addEventListener('click', closeModal)
+
+// MAP JS
 var map = new jsVectorMap({
   map: 'worldmerc',
   selector: '.map__root',

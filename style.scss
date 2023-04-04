@@ -10,23 +10,27 @@ body {
   margin: 0;
 }
 
-.column-for-map {
+.column {
   margin: 0 auto;
   padding: 0 20px;
-  background-color: #072229;
 
   @include tablet {
     padding: 0 100px;
   }
+  
+  &--map {
+    background-color: #072229;
+  }
 }
-
-.column-100 {
+  
+.column--100 {
   margin: 0 auto;
   padding: 0px;
-  background-color: #072229;
 }
+
 // End delete
 
+// MAP STYLES
 .map {
   width: 100%;
   overflow: visible;
@@ -254,4 +258,60 @@ body {
   padding: 5px 10px;
   font-size: 18px;
   border: 1px solid #CDCDCD;
+}
+
+// MODAL STYLES
+.modal {
+  // display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color: rgba(7, 34, 41, 0.9);
+  padding: 55px;
+  font-family: 'Manrope', sans-serif;
+  z-index: 1;
+  text-align: center;
+
+  &__close {
+    background: none;
+    border: none;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0px;
+    cursor: pointer;
+    transition: opacity 300ms;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  
+  &__content {
+    background-color: #FFFFFF;
+    padding: 45px 75px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: -0.01em;
+    margin: 0px 0px 14px 0px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    margin: 0px 0px 37px 0px;
+  }
 }

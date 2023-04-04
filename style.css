@@ -4,22 +4,24 @@ body {
   margin: 0;
 }
 
-.column-for-map {
+.column {
   margin: 0 auto;
   padding: 0 20px;
-  background-color: #072229;
 }
 
 @media (min-width: 768px) {
-  .column-for-map {
+  .column {
     padding: 0 100px;
   }
 }
 
-.column-100 {
+.column--map {
+  background-color: #072229;
+}
+
+.column--100 {
   margin: 0 auto;
   padding: 0px;
-  background-color: #072229;
 }
 
 .map {
@@ -271,4 +273,59 @@ body {
   padding: 5px 10px;
   font-size: 18px;
   border: 1px solid #CDCDCD;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(7, 34, 41, 0.9);
+  padding: 55px;
+  font-family: 'Manrope', sans-serif;
+  z-index: 1;
+  text-align: center;
+}
+
+.modal__close {
+  background: none;
+  border: none;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0px;
+  cursor: pointer;
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+}
+
+.modal__close:hover {
+  opacity: 0.6;
+}
+
+.modal__content {
+  background-color: #FFFFFF;
+  padding: 45px 75px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.modal__title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: -0.01em;
+  margin: 0px 0px 14px 0px;
+}
+
+.modal__subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  margin: 0px 0px 37px 0px;
 }

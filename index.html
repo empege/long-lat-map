@@ -7,12 +7,12 @@
     <title>Jsvectormap (Markers)</title>
     
     <!-- ----------------- Needed imports for map --------------------------- -->
-    <link rel="stylesheet" href="map.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="assets/jsvectormap.min.css"/>
     <script src="assets/jsvectormap.min.js"></script>
     <script src="assets/worldmerc.js"></script>
     <script src="assets/cities.js"></script>
-    <!-- Google fonts - check if globaly set already - both 500 and 600 font-weight -->
+    <!-- Google fonts - check if globaly set already - both 500 and 600 font-weight needed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet">
@@ -24,7 +24,20 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum numquam magnam illo molestiae cumque, provident, mollitia atque facilis incidunt saepe dignissimos vero? Officiis deserunt commodi, tempora illo fugit soluta minus.</p>
   </section>
 
-  <section class="column-for-map">
+  <section class="column" style="text-align: center;">
+    <button class="contact-us__modal-btn js-modal-open">OPEN MODAL</button>
+  </section>
+  <br/>
+
+  <div class="modal">
+    <div class="modal__content">
+      <button class="modal__close js-modal-close"><img src="assets/close.svg" alt="close"></button>
+      <h3 class="modal__title">Contact us heading here</h3>
+      <p class="modal__subtitle">We’d love to hear from you.</p>
+    </div>
+  </div>
+
+  <section class="column column--map">
     <!-- --------------- Copy me where you want the map to be ----------------------- -->
     <div class="map" data-active-region="america">
       <h3 class="map__subtitle">LOCATIONS</h3>
@@ -45,7 +58,8 @@
     <!-- -------------------------------------------------------------------------- -->
 
   </section>
-  <section class="column-for-map column-100">
+
+  <section class="column column--map column--100">
     
     <!-- --------------- Copy me below the map in another container so I go 100% width ----------------------- -->
     <!-- Delete until logos part is accepted -->
@@ -89,6 +103,6 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum numquam magnam illo molestiae cumque, provident, mollitia atque facilis incidunt saepe dignissimos vero? Officiis deserunt commodi, tempora illo fugit soluta minus.</p>
   </section>
 
-  <script src="map.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
