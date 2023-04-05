@@ -50,6 +50,8 @@ const modalEl = document.querySelector(`.${modal.selectors.modal}`)
 const openModalBtn = document.querySelector(`.${modal.selectors.openModalBtn}`)
 const closeModalBtn = document.querySelector(`.${modal.selectors.closeModalBtn}`)
 const formWrapper = document.querySelector(`.${modal.selectors.formWrapper}`)
+
+// Form elements data
 const formElementsData = {
   formEl: {
     tag: 'FORM',
