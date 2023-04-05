@@ -18,7 +18,31 @@ const modal = {
   },
   inputsPlaceholder: 'Type here',
   consentLabel: 'I consent to Elite Hands contacting me regarding the message I sent. Read more in our Privacy Policy',
-  submitIcon: 'assets/arrow.svg'
+  submitIcon: 'assets/arrow.svg',
+  formElements: {
+    formEl: null,
+    nameWrapper: null,
+    nameLabel: null,
+    nameInput: null,
+    emailWrapper: null,
+    emailLabel: null,
+    emailInput: null,
+    companyWrapper: null,
+    companyLabel: null,
+    companyInpu: null,
+    phoneWrapper: null,
+    phoneLabel: null,
+    phoneInput: null,
+    messageWrapper: null,
+    messageLabel: null,
+    messageInpu: null,
+    consentWrapper: null,
+    consentInput: null,
+    consentLabe: null,
+    submitBtnWrapper: null,
+    submitBtn: null,
+    submitIcon: null
+  }
 }
 
 // Elements
@@ -139,30 +163,6 @@ const formElementsData = {
     alt: 'arrow'
   }
 }
-const form = {
-  formEl: null,
-  nameWrapper: null,
-  nameLabel: null,
-  nameInput: null,
-  emailWrapper: null,
-  emailLabel: null,
-  emailInput: null,
-  companyWrapper: null,
-  companyLabel: null,
-  companyInpu: null,
-  phoneWrapper: null,
-  phoneLabel: null,
-  phoneInput: null,
-  messageWrapper: null,
-  messageLabel: null,
-  messageInpu: null,
-  consentWrapper: null,
-  consentInput: null,
-  consentLabe: null,
-  submitBtnWrapper: null,
-  submitBtn: null,
-  submitIcon: null
-}
 
 // Functions
 const openModal = () => {
@@ -176,12 +176,11 @@ const closeModal = () => {
   document.body.style.overflow = "auto";
 
   // delete Form from DOM
-  deleteElement(form.formEl)
+  deleteElement(modal.formElements.formEl)
   
   // Revert all values to null
-  for (const [key, value] of Object.entries(form)) {
-    form[key] = null
-    console.log(`${key}: ${value}`);
+  for (const [key] of Object.entries(modal.formElements)) {
+    modal.formElements[key] = null
   }
 }
 
@@ -207,42 +206,42 @@ const deleteElement = (element) => {
 const createForm = () => {
 
   // Create form
-  form.formEl = createElement({...formElementsData.formEl})
+  modal.formElements.formEl = createElement({...formElementsData.formEl})
 
   // Name
-  form.nameWrapper = createElement({...formElementsData.nameWrapper, appendTo: form.formEl})
-  form.nameLabel = createElement({...formElementsData.nameLabel, appendTo: form.nameWrapper})
-  form.nameInput = createElement({...formElementsData.nameInput, appendTo: form.nameWrapper})
+  modal.formElements.nameWrapper = createElement({...formElementsData.nameWrapper, appendTo: modal.formElements.formEl})
+  modal.formElements.nameLabel = createElement({...formElementsData.nameLabel, appendTo: modal.formElements.nameWrapper})
+  modal.formElements.nameInput = createElement({...formElementsData.nameInput, appendTo: modal.formElements.nameWrapper})
 
   // Email
-  form.emailWrapper = createElement({...formElementsData.emailWrapper, appendTo: form.formEl})
-  form.emailLabel = createElement({...formElementsData.emailLabel, appendTo: form.emailWrapper})
-  form.emailInput = createElement({...formElementsData.emailInput, appendTo: form.emailWrapper})
+  modal.formElements.emailWrapper = createElement({...formElementsData.emailWrapper, appendTo: modal.formElements.formEl})
+  modal.formElements.emailLabel = createElement({...formElementsData.emailLabel, appendTo: modal.formElements.emailWrapper})
+  modal.formElements.emailInput = createElement({...formElementsData.emailInput, appendTo: modal.formElements.emailWrapper})
 
   // Company
-  form.companyWrapper = createElement({...formElementsData.companyWrapper, appendTo: form.formEl})
-  form.companyLabel = createElement({...formElementsData.companyLabel, appendTo: form.companyWrapper})
-  form.companyInput = createElement({...formElementsData.companyInput, appendTo: form.companyWrapper})
+  modal.formElements.companyWrapper = createElement({...formElementsData.companyWrapper, appendTo: modal.formElements.formEl})
+  modal.formElements.companyLabel = createElement({...formElementsData.companyLabel, appendTo: modal.formElements.companyWrapper})
+  modal.formElements.companyInput = createElement({...formElementsData.companyInput, appendTo: modal.formElements.companyWrapper})
 
   // Phone
-  form.phoneWrapper = createElement({...formElementsData.phoneWrapper, appendTo: form.formEl})
-  form.phoneLabel = createElement({...formElementsData.phoneLabel, appendTo: form.phoneWrapper})
-  form.phoneInput = createElement({...formElementsData.phoneInput, appendTo: form.phoneWrapper})
+  modal.formElements.phoneWrapper = createElement({...formElementsData.phoneWrapper, appendTo: modal.formElements.formEl})
+  modal.formElements.phoneLabel = createElement({...formElementsData.phoneLabel, appendTo: modal.formElements.phoneWrapper})
+  modal.formElements.phoneInput = createElement({...formElementsData.phoneInput, appendTo: modal.formElements.phoneWrapper})
 
   // Message
-  form.messageWrapper = createElement({...formElementsData.messageWrapper, appendTo: form.formEl})
-  form.messageLabel = createElement({...formElementsData.messageLabel, appendTo: form.messageWrapper})
-  form.messageInput = createElement({...formElementsData.messageInput, appendTo: form.messageWrapper})
+  modal.formElements.messageWrapper = createElement({...formElementsData.messageWrapper, appendTo: modal.formElements.formEl})
+  modal.formElements.messageLabel = createElement({...formElementsData.messageLabel, appendTo: modal.formElements.messageWrapper})
+  modal.formElements.messageInput = createElement({...formElementsData.messageInput, appendTo: modal.formElements.messageWrapper})
 
   // Consent
-  form.consentWrapper = createElement({...formElementsData.consentWrapper, appendTo: form.formEl})
-  form.consentInput = createElement({...formElementsData.consentInput, appendTo: form.consentWrapper})
-  form.consentLabel = createElement({...formElementsData.consentLabel, appendTo: form.consentWrapper})
+  modal.formElements.consentWrapper = createElement({...formElementsData.consentWrapper, appendTo: modal.formElements.formEl})
+  modal.formElements.consentInput = createElement({...formElementsData.consentInput, appendTo: modal.formElements.consentWrapper})
+  modal.formElements.consentLabel = createElement({...formElementsData.consentLabel, appendTo: modal.formElements.consentWrapper})
 
   // Submit button
-  form.submitBtnWrapper = createElement({...formElementsData.submitBtnWrapper, appendTo: form.formEl})
-  form.submitBtn = createElement({...formElementsData.submitBtn, appendTo: form.submitBtnWrapper})
-  form.submitIcon = createElement({...formElementsData.submitIcon, appendTo: form.submitBtn})
+  modal.formElements.submitBtnWrapper = createElement({...formElementsData.submitBtnWrapper, appendTo: modal.formElements.formEl})
+  modal.formElements.submitBtn = createElement({...formElementsData.submitBtn, appendTo: modal.formElements.submitBtnWrapper})
+  modal.formElements.submitIcon = createElement({...formElementsData.submitIcon, appendTo: modal.formElements.submitBtn})
 }
 
 //Event listeners
