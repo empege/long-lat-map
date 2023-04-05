@@ -17,6 +17,7 @@ const modal = {
     submitBtn: 'modal__submit-btn',
   },
   inputsPlaceholder: 'Type here',
+  consentLabel: 'I consent to Elite Hands contacting me regarding the message I sent. Read more in our Privacy Policy',
   submitIcon: 'assets/arrow.svg'
 }
 
@@ -115,7 +116,7 @@ const formElementsData = {
   consentLabel: {
     tag: 'LABEL',
     htmlFor: modal.selectors.consentInput,
-    text: 'I consent to Elite Hands contacting me regarding the message I sent. Read more in our Privacy Policy'
+    text: modal.consentLabel
   },
   consentInput: {
     tag: 'INPUT',
