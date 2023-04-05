@@ -86,7 +86,7 @@ const formElementsData = {
   emailInput: {
     tag: 'INPUT',
     id: modal.selectors.emailInput,
-    type: 'text',
+    type: 'email',
     required: true,
     placeholder: modal.inputsPlaceholder
   },
@@ -148,7 +148,8 @@ const formElementsData = {
     tag: 'INPUT',
     id: modal.selectors.consentInput,
     type: 'checkbox',
-    placeholder: modal.inputsPlaceholder
+    placeholder: modal.inputsPlaceholder,
+    required: true
   },
   submitBtnWrapper: {
     tag: 'DIV',
@@ -209,6 +210,7 @@ const createForm = () => {
 
   // Create form
   modal.formElements.formEl = createElement({...formElementsData.formEl})
+  modal.formElements.formEl.addEventListener('submit', submitForm)
 
   // Name
   modal.formElements.nameWrapper = createElement({...formElementsData.nameWrapper, appendTo: modal.formElements.formEl})
@@ -244,6 +246,14 @@ const createForm = () => {
   modal.formElements.submitBtnWrapper = createElement({...formElementsData.submitBtnWrapper, appendTo: modal.formElements.formEl})
   modal.formElements.submitBtn = createElement({...formElementsData.submitBtn, appendTo: modal.formElements.submitBtnWrapper})
   modal.formElements.submitIcon = createElement({...formElementsData.submitIcon, appendTo: modal.formElements.submitBtn})
+}
+
+const submitForm = (e) => {
+  e.preventDefault()
+  // LEFT TO FINISH:
+  console.log('Form submitted!')
+  console.log('Check if consent button is required - if yes need validation error in design')
+  console.log('Add fetch')
 }
 
 //Event listeners
