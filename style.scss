@@ -27,7 +27,6 @@ body {
   margin: 0 auto;
   padding: 0px;
 }
-
 // End delete
 
 // MAP STYLES
@@ -36,6 +35,12 @@ body {
   overflow: visible;
   color: #FFFFFF;
   font-family: 'Manrope', sans-serif;
+  box-sizing: border-box;
+
+  & * {
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+  }
 
   &__subtitle {
     font-size: 14px;
@@ -51,7 +56,6 @@ body {
       padding-top: 105px;
       margin-bottom: 19px;
     }
-
   }
 
   &__title {
@@ -260,19 +264,31 @@ body {
   border: 1px solid #CDCDCD;
 }
 
-// MODAL STYLES
+// MODAL STYLES//
 .modal {
-  // display: none;
+  display: none;
+  overflow-y: scroll;
   position: fixed;
   top:0;
   left:0;
   bottom:0;
   right:0;
-  background-color: rgba(7, 34, 41, 0.9);
-  padding: 55px;
+  background-color: #FFFFFF;
+  padding: 0px;
   font-family: 'Manrope', sans-serif;
   z-index: 1;
   text-align: center;
+  box-sizing: border-box;
+  
+  @include tablet {
+    background-color: rgba(7, 34, 41, 0.9);
+    padding: 55px;
+  }
+
+  & * {
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+  }
 
   &__close {
     background: none;
@@ -293,10 +309,16 @@ body {
   
   &__content {
     background-color: #FFFFFF;
-    padding: 45px 75px;
+    padding: 40px 20px;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
+    height: fit-content;
+  
+    @include tablet {
+      height: auto;
+      padding: 45px 75px;
+    }
   }
 
   &__title {
@@ -304,7 +326,11 @@ body {
     font-weight: 600;
     line-height: 38px;
     letter-spacing: -0.01em;
-    margin: 0px 0px 14px 0px;
+    margin: 0px 0px 10px 0px;
+
+    @include tablet {
+      margin: 0px 0px 14px 0px;
+    }
   }
 
   &__subtitle {
@@ -312,6 +338,150 @@ body {
     font-weight: 500;
     line-height: 21px;
     letter-spacing: 0em;
-    margin: 0px 0px 37px 0px;
+    margin: 0px 0px 26px 0px;
+
+    @include tablet {
+      margin: 0px 0px 37px 0px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+
+    @include tablet {
+      width: 50%;
+
+      &:nth-child(odd):not(.modal__input-wrapper--message) {
+        padding-right: 15px;
+      }
+  
+      &:nth-child(even):not(.modal__input-wrapper--consent) {
+        padding-left: 15px;
+      }
+    }
+
+    label {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #000000;
+      margin-bottom: 8px;
+    }
+
+    input {
+      height: 60px;
+      padding: 18px 20px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0em;
+      margin-bottom: 10px;  
+    }
+
+    &--message {
+      width: 100%;
+      margin-bottom: 20px;
+
+      textarea {
+        width: 100%;
+        max-width: 100%;
+        height: 120px;
+        padding: 18px 20px;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+        resize: none;
+      }
+    }
+
+    &--consent {
+      width: 100%;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 36px;
+
+      input {
+        height: auto;
+        padding: 0px;
+        margin: 0px;
+        width: fit-content;
+        margin-right: 30px;
+        position: relative;
+        width: 0;
+        height: 0;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          width: 18px;
+          height: 18px;
+          border: 1px solid #072229;
+          display: block;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+
+        &:checked {
+          &::after {
+            content: "";
+            width: 14px;
+            height: 14px;
+            background-color: #072229;
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+          }
+        }
+      }
+
+      label {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        margin-bottom: 0px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__submit-btn-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__submit-btn {
+    background-color: #96D1FE;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 48px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    cursor: pointer;
+    transition: opacity 300ms;
+
+    img {
+      margin-left: 13px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
